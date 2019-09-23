@@ -13,11 +13,7 @@ fn react_polymer(chars: &mut Vec<char>) {
                 if c0 == c1 {
                     chars.remove(i-1);
                     chars.remove(i-1);
-                    if i > 1 {
-                        start_idx = i - 1;
-                    } else {
-                        start_idx = 1;
-                    }
+                    start_idx = if i > 1 { i-1 } else { 1 };
                     is_reacted = true;
                     break;
                 }
